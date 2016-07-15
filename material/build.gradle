@@ -2,13 +2,13 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 23
         versionCode 21
-        versionName "1.2.2"
+        versionName "1.2.4"
     }
     buildTypes {
         release {
@@ -19,7 +19,7 @@ android {
 }
 
 ext{
-    libSupportVersion = '23.1.1'
+    libSupportVersion = '23.4.0'
 }
 
 dependencies {
@@ -30,4 +30,7 @@ dependencies {
     compile "com.android.support:recyclerview-v7:${libSupportVersion}"
 }
 
-apply from: '../dist/bintray.gradle'
+// Place it at the end of the file
+apply from: "$rootProject.projectDir/dist/distInfo.gradle"
+apply from: "$rootProject.projectDir/dist/bintray.gradle"
+apply from: "$rootProject.projectDir/dist/maven.gradle"
